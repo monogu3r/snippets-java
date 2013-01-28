@@ -10,13 +10,12 @@ public class StringUtils {
      * @return 前方一致した文字列
      */
     public static String getStartsWithString(String[] strArray) {
-        if (strArray == null || strArray.length == 0) {
+        // 引数チェック
+        if (strArray == null || strArray.length == 0 || strArray[0] == null) {
             return "";
         }
+        
         String startsWith = strArray[0];
-        if (startsWith == null) {
-            return "";
-        }
         int length = startsWith.length();
         while (length > 0) {
             startsWith = startsWith.substring(0, length);
